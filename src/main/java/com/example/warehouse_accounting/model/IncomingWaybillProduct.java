@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.ToString;
 
 @Entity
-@Table
+@Table(name = "incoming_waybill_products")
 @Data
 @ToString
 public class IncomingWaybillProduct {
@@ -34,10 +34,9 @@ public class IncomingWaybillProduct {
 
     private double totalCost;
 
-
-
-
-    //ссылка на документ
+    @ManyToOne
+    @JoinColumn(name = "incoming_waybill_id")
+    private IncomingWaybill incomingWaybill;
 
 }
 

@@ -18,7 +18,7 @@ import java.util.List;
 @ToString
 public class IncomingWaybill {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String incomingWaybillNumber;
 
@@ -29,7 +29,7 @@ public class IncomingWaybill {
     private double totalCost;
     private double netCost;
     private double totalVat;
+    @OneToMany(mappedBy = "incomingWaybill", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<IncomingWaybillProduct> incomingWaybillProducts = new ArrayList<>();
 
-//    @OneToMany
-//    private List<IncomingWaybillProduct> incomingWaybillProducts = new ArrayList<>();
 }
