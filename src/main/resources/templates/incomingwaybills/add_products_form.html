@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Warehouse</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Warehouse</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/products}">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/counteragents}">Counteragents</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class ="container">
+  <div class = "row">
+    <h1> Incoming Products </h1>
+  </div>
+  <form th:action="@{/incoming_waybills}"  th:object="${productsForm}" method="POST">
+    <table class = "table table-striped table-bordered">
+      <thead class = "table-dark">
+      <tr>
+        <th> Product </th>
+        <th> Unit Of Measurement</th>
+        <th> Purchase Price </th>
+        <th> Vat Rate</th>
+        <th> Quantity</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr th:each="product, itemStat : *{products}">
+        <td><input type="text" th:field="*{products[__${itemStat.index}__].name}"/></td>
+        <td><input type="text" th:field="*{products[__${itemStat.index}__].unitOfMeasurement}"/></td>
+        <td><input type="number" th:field="*{products[__${itemStat.index}__].vatRate}"/></td>
+        <td><input type="number" th:field="*{products[__${itemStat.index}__].quantity}" /></td>
+        <td><input type="number" th:field="*{products[__${itemStat.index}__].purchasePrice}" /></td>
+
+      </tr>
+      </tbody>
+
+    </table>
+    <input type="hidden" name="incomingWaybill" th:value="${incomingWaybill}"/>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+</body>
+</html>
