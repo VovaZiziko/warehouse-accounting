@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 @Entity
 @Table(name = "incoming_waybill_products")
 @Data
@@ -34,7 +37,7 @@ public class IncomingWaybillProduct {
 
     private double totalCost;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "incoming_waybill_id")
     private IncomingWaybill incomingWaybill;
 

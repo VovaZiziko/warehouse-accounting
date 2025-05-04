@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Warehouse</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Warehouse</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/products}">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/counteragents}">Counteragents</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/incoming_waybills}">Incoming Waybills</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/contracts}">Contracts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/outgoing_waybills}">Outgoing Waybills</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class ="container">
+  <div class = "row">
+    <h1> Contracts </h1>
+  </div>
+
+  <div class = "row">
+    <div class = "col-lg-3">
+      <a th:href = "@{/contracts/new}" class = "btn btn-primary btn-sm mb-3"> Add Contract</a>
+    </div>
+  </div>
+  <table class = "table table-striped table-bordered">
+    <thead class = "table-dark">
+    <tr>
+      <th> Contract Number </th>
+      <th> Date</th>
+      <th> Counteragent </th>
+      <th> Net Cost </th>
+      <th> Total VAT </th>
+      <th> Total Cost </th>
+      <th> Actions </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each = "contract: ${contracts}">
+      <td th:text = "${contract.contractNumber}"></td>
+      <td th:text = "${contract.contractDate}"></td>
+      <td th:text = "${contract.counteragentName}"></td>
+      <td th:text = "${contract.netCost}"></td>
+      <td th:text = "${contract.totalVat}"></td>
+      <td th:text = "${contract.totalCost}"></td>
+      <td>
+        <a th:href = "@{/contracts/edit/{id}(id=${contract.id})}"
+           class = "btn btn-primary">Update</a>
+
+        <a th:href = "@{/outgoing_waybills/new/{id}(id=${contract.id})}"
+           class = "btn btn-primary">Write off</a>
+
+        <a th:href = "@{/contracts/{id}(id=${contract.id})}"
+           class = "btn btn-danger">Delete</a>
+
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+
+</div>
+</body>
+</html>

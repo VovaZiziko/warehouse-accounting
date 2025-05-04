@@ -21,15 +21,19 @@ public class IncomingWaybill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String incomingWaybillNumber;
-
-
     private LocalDate incomingWaybillDate;
-    //private String incomingWaybillDate;
     private String counteragentName;
     private double totalCost;
     private double netCost;
     private double totalVat;
     @OneToMany(mappedBy = "incomingWaybill", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<IncomingWaybillProduct> incomingWaybillProducts = new ArrayList<>();
+
+    public void setIncomingWaybillProducts(List<IncomingWaybillProduct> incomingWaybillProducts) {
+        this.incomingWaybillProducts = incomingWaybillProducts;
+        for (IncomingWaybillProduct incomingWaybillProduct : incomingWaybillProducts) {
+            incomingWaybillProduct.setIncomingWaybill(this);
+        }
+    }
 
 }

@@ -44,43 +44,42 @@
 <div class = "container">
     <div class = "row">
         <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-            <h1 class = "text-center"> Create New Product </h1>
+            <h1 class = "text-center"> Create New Contract </h1>
             <div class = "card-body">
 
-                <form th:action="@{/products}" th:object = "${product}" method="POST">
+                <form th:action="@{/contracts/new/products}" th:object = "${contractDTO}" method="POST">
                     <div class ="form-group">
-                        <label> Product Name </label>
+                        <label> Contract Number </label>
                         <input
                                 type = "text"
-                                name = "name"
-                                th:field = "*{name}"
+                                name = "contractNumber"
+                                th:field = "*{contractNumber}"
                                 class = "form-control"
-                                placeholder="Enter Product Name"
+                                placeholder="Enter Contract Number"
                         />
                     </div>
 
                     <div class ="form-group">
-                        <label> Unit of measurement </label>
+                        <label> Date </label>
                         <input
-                                type = "text"
-                                name = "UnitOfMeasurement"
-                                th:field = "*{unitOfMeasurement}"
+                                type = "date"
+                                name = "contractDate"
+                                th:field = "*{contractDate}"
                                 class = "form-control"
-                                placeholder="Enter unit of measurement"
+                                placeholder="Enter Date"
                         />
                     </div>
 
                     <div class ="form-group">
-                        <label> VAT rate </label>
-                        <input
-                                type = "text"
-                                name = "vat rate"
-                                th:field = "*{vatRate}"
-                                class = "form-control"
-                                placeholder="Enter VAT rate"
-                        />
-                    </div>
 
+                        <label> Counteragent </label>
+                        <select th:field="*{counteragentName}">
+                            <option value="" disabled selected>Choose...</option>
+                            <option th:each="counteragent : ${counteragents}"
+                                    th:value="${counteragent.name}"
+                                    th:text="${counteragent.name}"></option>
+                        </select>
+                    </div>
 
                     <div class = "box-footer">
                         <button type="submit" class = "btn btn-primary">

@@ -1,5 +1,6 @@
 package com.example.warehouse_accounting.dto;
 
+import com.example.warehouse_accounting.model.ContractProduct;
 import com.example.warehouse_accounting.model.IncomingWaybillProduct;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,14 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class IncomingProductCreationDTO {
+@NoArgsConstructor
+public class ContractProductCreationDTO {
 
-    private List<IncomingWaybillProduct> products = new ArrayList<>();
+    private List<ContractProduct> products = new ArrayList<>();
 
-    public void addProduct(IncomingWaybillProduct product) {
+    public void addProduct(ContractProduct product) {
         this.products.add(product);
     }
-
 }
