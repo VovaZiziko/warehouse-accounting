@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <include file="2025-05-06-1-create-table-products.xml" relativeToChangelogFile="true" />
+    <include file="2025-05-06-2-create-table-counteragents.xml" relativeToChangelogFile="true" />
+    <include file="2025-05-06-3-create-table-incoming-waybills.xml" relativeToChangelogFile="true" />
+    <include file="2025-05-06-4-create-table-incoming-waybill-products.xml" relativeToChangelogFile="true" />
+    <include file="2025-05-06-5-create-table-outgoing-waybills.xml" relativeToChangelogFile="true" />
+    <include file="2025-05-06-6-create-table-contracts.xml" relativeToChangelogFile="true" />
+    <include file="2025-05-06-7-create-table-contract-products.xml" relativeToChangelogFile="true" />
+    <include file="2025-05-06-8-insert-products.xml" relativeToChangelogFile="true" />
+    <include file="2025-05-06-9-insert-counteragents.xml" relativeToChangelogFile="true" />
+
+
+</databaseChangeLog>

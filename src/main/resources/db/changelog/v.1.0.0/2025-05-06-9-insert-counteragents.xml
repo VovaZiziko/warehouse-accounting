@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="author">
+        <insert tableName="counteragents">
+            <column  name="name"  value="Контрагент 1"/>
+            <column  name="tin"  value="УНП 1"/>
+            <column  name="address"  value="Адрес 1"/>
+            <column  name="phone"  value="Телефон 1"/>
+            <column  name="email"  value="Электронная почта 1"/>
+            <column  name="bank_account"  value="Банковский счет 1"/>
+            <column  name="bank_name"  value="Банк 1"/>
+        </insert>
+        <insert tableName="counteragents">
+            <column  name="name"  value="Контрагент 2"/>
+            <column  name="tin"  value="УНП 2"/>
+            <column  name="address"  value="Адрес 2"/>
+            <column  name="phone"  value="Телефон 2"/>
+            <column  name="email"  value="Электронная почта 2"/>
+            <column  name="bank_account"  value="Банковский счет 2"/>
+            <column  name="bank_name"  value="Банк 2"/>
+        </insert>
+        <insert tableName="counteragents">
+            <column  name="name"  value="Контрагент 3"/>
+            <column  name="tin"  value="УНП 3"/>
+            <column  name="address"  value="Адрес 3"/>
+            <column  name="phone"  value="Телефон 3"/>
+            <column  name="email"  value="Электронная почта 3"/>
+            <column  name="bank_account"  value="Банковский счет 3"/>
+            <column  name="bank_name"  value="Банк 3"/>
+        </insert>
+
+
+    </changeSet>
+
+</databaseChangeLog>

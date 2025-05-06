@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="author">
+        <createTable tableName="contract_products">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="unit_of_measurement" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="purchase_price" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sale_price" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vat_rate" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quantity" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="net_cost" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vat_amount" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_cost" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contract_id" type="int">
+                <constraints foreignKeyName="fk_products_contract" references="contracts(id)" />
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

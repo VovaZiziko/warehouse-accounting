@@ -16,25 +16,15 @@ public class IncomingWaybillProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    //@Column(nullable = false, unique = true)
     private String name;
-
-    //@Column(nullable = false)
     private String unitOfMeasurement;
-
     private double purchasePrice;
-
-    //@Column(nullable = false)
     private double vatRate;
-
     private double quantity;
 
     //расчетные величины
     private double netCost;
-
     private double vatAmount;
-
     private double totalCost;
 
     @ManyToOne(fetch = FetchType.LAZY)

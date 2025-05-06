@@ -17,7 +17,6 @@ public class OutgoingWaybill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String outgoingWaybillNumber;
     private LocalDate outgoingWaybillDate;
     private String companyRepresentative;

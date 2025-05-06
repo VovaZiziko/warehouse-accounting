@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="author">
+        <insert tableName="products">
+            <column  name="name"  value="Продукт 1"/>
+            <column  name="unit_of_measurement"  value="шт"/>
+            <column  name="purchase_price"  value="0"/>
+            <column  name="vat_rate"  value="20"/>
+            <column  name="total_quantity"  value="0"/>
+            <column  name="reserved_quantity"  value="0"/>
+        </insert>
+        <insert tableName="products">
+            <column  name="name"  value="Продукт 2"/>
+            <column  name="unit_of_measurement"  value="шт"/>
+            <column  name="purchase_price"  value="0"/>
+            <column  name="vat_rate"  value="20"/>
+            <column  name="total_quantity"  value="0"/>
+            <column  name="reserved_quantity"  value="0"/>
+        </insert>
+        <insert tableName="products">
+            <column  name="name"  value="Продукт 3"/>
+            <column  name="unit_of_measurement"  value="шт"/>
+            <column  name="purchase_price"  value="0"/>
+            <column  name="vat_rate"  value="20"/>
+            <column  name="total_quantity"  value="0"/>
+            <column  name="reserved_quantity"  value="0"/>
+        </insert>
+        <insert tableName="products">
+            <column  name="name"  value="Продукт 4"/>
+            <column  name="unit_of_measurement"  value="шт"/>
+            <column  name="purchase_price"  value="0"/>
+            <column  name="vat_rate"  value="20"/>
+            <column  name="total_quantity"  value="0"/>
+            <column  name="reserved_quantity"  value="0"/>
+        </insert>
+        <insert tableName="products">
+            <column  name="name"  value="Продукт 5"/>
+            <column  name="unit_of_measurement"  value="шт"/>
+            <column  name="purchase_price"  value="0"/>
+            <column  name="vat_rate"  value="20"/>
+            <column  name="total_quantity"  value="0"/>
+            <column  name="reserved_quantity"  value="0"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

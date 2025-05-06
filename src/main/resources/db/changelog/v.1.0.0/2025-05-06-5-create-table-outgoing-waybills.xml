@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="author">
+        <createTable tableName="outgoing_waybills">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="outgoing_waybill_number" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="outgoing_waybill_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="company_representative" type="varchar(100)">
+            </column>
+            <column name="client_representative" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trust" type="varchar(50)">
+            </column>
+<!--            <column name="contract_id" type="int">-->
+<!--                <constraints foreignKeyName="fk_waybill_contract" references="contracts(id)"/>-->
+<!--            </column>-->
+
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
